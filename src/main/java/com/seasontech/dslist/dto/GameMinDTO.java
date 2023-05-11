@@ -1,6 +1,7 @@
 package com.seasontech.dslist.dto;
 
 import com.seasontech.dslist.entities.Game;
+import com.seasontech.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
     private Long id;
@@ -20,6 +21,13 @@ public GameMinDTO(Game entity){
     year = entity.getYear();
     imgUrl = entity.getImgUrl();
     shortDescription = entity.getShortDescription();
+}
+public GameMinDTO(GameMinProjection projection){
+    id = projection.getId();
+    title = projection.getTitle();
+    year = projection.getYear();
+    imgUrl = projection.getImgUrl();
+    shortDescription = projection.getShortDescription();
 }
 
 
